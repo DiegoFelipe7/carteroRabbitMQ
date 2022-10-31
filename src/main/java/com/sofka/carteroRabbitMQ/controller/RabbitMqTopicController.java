@@ -12,12 +12,13 @@ public class RabbitMqTopicController {
     @Autowired
     private AmqpTemplate amqpTemplate;
 
-    @GetMapping(value = "/room")
+    @GetMapping(value = "/send")
     public String producer(@RequestParam("exchangeName") String exchange, @RequestParam("routingKey") String routingKey,
                            @RequestParam("messageData") String messageData) {
 
         amqpTemplate.convertAndSend(exchange, routingKey, messageData);
 
-        return "Message sent to the RabbitMQ Topic Exchange Successfully";
+        return "Message sent to the website successfully";
     }
+
 }

@@ -50,6 +50,27 @@ public class RabbitMqTopicConfig {
     Binding P3Binding(Queue P3Queue, TopicExchange topicExchange) {
         return BindingBuilder.bind(P3Queue).to(topicExchange).with("queue.roomOdd");
     }
+
+    @Bean
+    Binding P1Binding1(Queue P1Queue, TopicExchange topicExchange) {
+        return BindingBuilder.bind(P1Queue).to(topicExchange).with("queue.room");
+    }
+
+    @Bean
+    Binding P2Binding2(Queue P2Queue, TopicExchange topicExchange) {
+        return BindingBuilder.bind(P2Queue).to(topicExchange).with("queue.room");
+    }
+    @Bean
+    Binding P3Bindin3(Queue P3Queue, TopicExchange topicExchange) {
+        return BindingBuilder.bind(P3Queue).to(topicExchange).with("queue.room");
+    }
+
+    @Bean
+    Binding P4Binding4(Queue P4Queue, TopicExchange topicExchange) {
+        return BindingBuilder.bind(P4Queue).to(topicExchange).with("queue.room");
+    }
+
+
     @Bean
     public MessageConverter jsonMessageConverter() {
         return new Jackson2JsonMessageConverter();
